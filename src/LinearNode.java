@@ -1,11 +1,6 @@
 /**
- * LinearNode represents a node in a linked list.
- *
- * @author Dr. Lewis
- * @author Dr. Chase
- * @version 1.0, 08/13/08
+ * LinearNode represents a node in a linked list
  */
-
 public class LinearNode<E>
 {
     private LinearNode<E> next;
