@@ -1,16 +1,3 @@
-/**
- * This program is called Squabble. it is similar to the popular game "Wordle" where you are given a mystery word,
- * and you will have to guess the correct word.
- * This game uses linked lists to assemble the letters together as well as nested linked lists to display your guess history.
- * 
- * there is a decorator function that will mark your guessed letters as correct, used, and unused as it would in the original game.
- * 
- * This program consists of many useful classes and functions that make sure the game runs properly.
- * 
- * 
- * @author Nathan Orgera
- */
-
 public class Letter {
 	
 	private char letter;
