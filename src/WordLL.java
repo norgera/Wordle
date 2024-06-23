@@ -1,48 +1,35 @@
-
 public class WordLL {
-	
-	 private Word mysteryWord;
-	 private LinearNode<Word> history;
 
-	 
-	 /**
-	  * constructor for WordLL
-	  * @param mystery word
-	  */
-	    public WordLL(Word mystery){
-	        this.history = null;
-	        this.mysteryWord = mystery;
-	    }
+    private Word mysteryWord;
+    private LinearNode<Word> history;
 
-	  /**
-	   * labels guess word in comparison to the mystery word and adds guess word to history list
-	   * @param guess word
-	   * @return true/false
-	   */
-	    public boolean tryWord(Word guess){
-	        guess.labelWord(this.mysteryWord); // labels each letter in guess word
+    // Constructor for WordLL
+    public WordLL(Word mystery) {
+        this.history = null;
+        this.mysteryWord = mystery;
+    }
 
-	        LinearNode<Word> guessNode = new LinearNode(guess);
-	        guessNode.setNext(this.history);    // points to the node that history points to
-	        this.history = guessNode;           // point to the new node
+    // Labels guess word in comparison to the mystery word and adds guess word to history list
+    public boolean tryWord(Word guess) {
+        guess.labelWord(this.mysteryWord); // Labels each letter in guess word
 
-	        return guess.isFullyCorrect(this.mysteryWord); // returns true if all letters are correct and in the right spot
-	    }
+        LinearNode<Word> guessNode = new LinearNode<>(guess);
+        guessNode.setNext(this.history);    // Points to the node that history points to
+        this.history = guessNode;           // Points to the new node
 
+        return guess.isFullyCorrect(this.mysteryWord); // Returns true if all letters are correct and in the right spot
+    }
 
-	    
-	    /**
-	     * toString method that outputs a list of word objects.
-	     */
-	    public String toString(){
-	        LinearNode<Word> current = this.history;
-	        String finalString = "";
-	        
-	        // adding each word to a string with a newline separating each word
-	        while(current != null){
-	            finalString += current.getElement().toString() + "\n";
-	            current = current.getNext();
-	        }
-	        return finalString;
-	    }     
+    // Outputs a list of word objects as a string
+    public String toString() {
+        LinearNode<Word> current = this.history;
+        String finalString = "";
+        
+        // Adding each word to a string with a newline separating each word
+        while (current != null) {
+            finalString += current.getElement().toString() + "\n";
+            current = current.getNext();
+        }
+        return finalString;
+    }
 }
